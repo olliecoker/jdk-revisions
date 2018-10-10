@@ -1,4 +1,7 @@
 #!/bin/sh
+
+git config --global credential.helper cache
+
 i=1
 limit=20
 while [ $i -lt $limit ]
