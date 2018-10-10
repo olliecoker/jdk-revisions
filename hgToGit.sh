@@ -2,8 +2,8 @@
 
 git config --global credential.helper cache
 
-i=750
-limit=1000
+i=1000
+limit=2000
 while [ $i -lt $limit ]
 do
   i=`expr 1 + $i`
