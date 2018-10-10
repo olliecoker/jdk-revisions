@@ -2,21 +2,21 @@
 
 git config --global credential.helper cache
 
-i=1
-limit=20
+i=20
+limit=50
 while [ $i -lt $limit ]
 do
   i=`expr 1 + $i`
-  echo "hg pull --rev=$i"
+  echo "# hg pull --rev=$i"
   hg pull --rev=$i
-  echo "hg update"
+  echo "# hg update"
   hg update
-  echo "git add ."
+  echo "# git add ."
   git add .
-  echo "git commit"
+  echo "# git commit"
   git commit -m "hg pull --rev=$i"
-  echo "git push -u origin master"
+  echo "# git push -u origin master"
   git push -u origin master
-  echo "------------------------------"
+  echo "---------------------------------------------------------------------------------------------"
 done
 
